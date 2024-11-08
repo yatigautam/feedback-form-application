@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Feedback!</h1>
+    </header>
+
+    <div class="container">
+        <p>Your response has been recorded. We appreciate your feedback!</p>
+        <button id="backToHomePage">Go Back to Home Page</button>
+    </div>
+
+    <script>
+        document.getElementById("backToHomePage").addEventListener("click", function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

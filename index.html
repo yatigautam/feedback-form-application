@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>User Feedback</h1>
+    </header>
+
+    <!-- Google Sign-In Button -->
+<div id="signin-button">
+    <button onclick="handleSignIn()">Sign in with Google</button>
+</div>
+
+
+    <div class="container">
+        <form id="feedbackForm">
+            <!-- Rating Section -->
+            <div class="form-group">
+                <label for="rating">Rate your experience:</label>
+                <input type="range" id="rating" name="rating" min="1" max="5" value="3" oninput="updateRatingDisplay(this.value)">
+                <div id="ratingDisplay">3</div>
+            </div>
+
+            <!-- Comment Box -->
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Your thoughts..."></textarea>
+            </div>
+
+            <!-- Dropdown for Reason -->
+            <div class="form-group">
+                <label for="reason">Reason for Feedback:</label>
+                <select id="reason" name="reason">
+                    <option value="support">Support</option>
+                    <option value="quality">Quality</option>
+                    <option value="usability">Usability</option>
+                </select>
+            </div>
+
+            <!-- Checkbox Group for User Type -->
+            <div class="form-group">
+                <label>User Type:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="userType" value="new"> New User</label>
+                    <label><input type="checkbox" name="userType" value="returning"> Returning User</label>
+                </div>
+            </div>
+
+            <!-- Optional Information -->
+            <div class="form-group">
+                <label for="name">Name (Optional):</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email (Optional):</label>
+                <input type="email" id="email" name="email">
+                <small class="disclaimer">We value your privacy and won’t share your info.</small>
+            </div>
+
+            <!-- Submit Button -->
+             <!-- Modify the feedback form to use JavaScript submission -->
+<form id="feedbackForm" onsubmit="event.preventDefault(); submitFeedback();">
+    <!-- Existing form fields here -->
+    <button type="submit">Submit Feedback</button>
+</form>
+
+    </div>
+
+    <!-- Chart Section -->
+    <div id="chartContainer">
+        <h2>Feedback Summary</h2>
+        <canvas id="feedbackChart"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script/script.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <!-- Add this to the head section of your HTML to include Chart.js -->
+
+</body>
+</html>
